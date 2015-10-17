@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>js动画效果1</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+.div{
+	width: 200px;
+	height:200px;
+	background-color: red;
+	position: relative;
+	top: 0;
+	left: -200px;
+}
+.span{
+	width: 20px;
+	height: 50px;
+	background-color:blue;
+	position: absolute;
+	top: 65px;
+	left: 200px;
+}
+</style>
+</head>
+<body>
+	<div class="div" id="div">
+		<span class="span">分享</span>
+	</div>	
+</body>
+<script>
+	window.onload = function(){
+		var oDiv = document.getElementById('div');
+		oDiv.onmouseover = function(){
+			startMove(0);
+		};
+		oDiv.onmouseout = function(){
+			startMove(-200);
+		}
+	}
+var timer = null;
+	function startMove(end){
+		var oDiv = document.getElementById('div');
+		clearInterval(timer);
+		timer = setInterval(function(){
+			var speed = Math.floor((end - oDiv.offsetLeft)/20);
+			
+			if (oDiv.offsetLeft == end) {
+				clearInterval(timer);
+			}else{
+				oDiv.style.left = oDiv.offsetLeft + speed +'px';
+			}
+		},30);
+	}
+</script>
+</html>
