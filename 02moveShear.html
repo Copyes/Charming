@@ -46,8 +46,6 @@ var timer = null;
 		var oDiv = document.getElementById('div');
 		clearInterval(timer);
 		timer = setInterval(function(){
-			var speed = Math.floor((end - oDiv.offsetLeft)/20);
-			
 			var speed = (end - oDiv.offsetLeft)/20;
 			speed = (speed > 0) ? Math.ceil(speed ) : Math.floor(speed);
 			if (oDiv.offsetLeft == end) {
