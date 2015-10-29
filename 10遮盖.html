@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>遮盖</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+.info{
+	width: 760px;
+	margin: 0 auto;
+}
+.wrap{
+	width:220px;
+	height: 330px;
+	float: left;
+	position: relative;
+	overflow: hidden;
+	font-family: "微软雅黑"
+}
+.wrap img{
+	border: 0;
+	height: 330px;
+	width:220px;
+}
+.wrap p{
+	height: 330px;
+	width:220px;
+	position: absolute;
+	left: 0;
+	top: 300px;
+	background: rgba(0,0,0,0.3);
+	font-size: 12px;
+	color: #FFFFFF;
+	line-height: 16px;
+	transition:all 0.6s ease-in-out;
+}
+.wrap p b{
+	font-size: 22px;
+	display: block;
+	color: #fc0;
+	text-align: center;
+	line-height: 30px;
+}
+.wrap p span{
+	display: block;
+	line-height: 20px;
+	padding: 10px;
+}
+.wrap p:hover{
+	top: 0;
+}
+</style>
+</head>
+<body>
+<div class="info">
+	<div class="wrap">
+		<img src="./8.jpg" alt="">
+		<p>
+			<b>Red Eye Frog</b>
+			<span>Red-eyed tree frogs, as their name states, have bold red eyes with vertically narrowed pupils, a vibrant green body with yellow and blue striped sides, and orange toes. There is a great deal of regional variation in flank and thigh coloration.<br/>Although it has been suggested that A. callidryas' bright colors function as aposematic or sexual signals, neither of these hypotheses have been confirmed.</span>
+		</p>
+	</div>
+	<div class="wrap">
+		<img src="./8.jpg" alt="">
+		<p>
+			<b>Red Eye Frog</b>
+			<span>Red-eyed tree frogs, as their name states, have bold red eyes with vertically narrowed pupils, a vibrant green body with yellow and blue striped sides, and orange toes. There is a great deal of regional variation in flank and thigh coloration.<br/>Although it has been suggested that A. callidryas' bright colors function as aposematic or sexual signals, neither of these hypotheses have been confirmed.</span>
+		</p>
+	</div>
+	<div class="wrap">
+		<img src="./8.jpg" alt="">
+		<p>
+			<b>Red Eye Frog</b>
+			<span>Red-eyed tree frogs, as their name states, have bold red eyes with vertically narrowed pupils, a vibrant green body with yellow and blue striped sides, and orange toes. There is a great deal of regional variation in flank and thigh coloration.<br/>Although it has been suggested that A. callidryas' bright colors function as aposematic or sexual signals, neither of these hypotheses have been confirmed.</span>
+		</p>
+	</div>
+</div>	
+</body>
+</html>
