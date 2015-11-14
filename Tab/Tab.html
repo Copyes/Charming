@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tab标签</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 12px;
+}
+.tab{
+	width: 298px;
+	height: 98px;
+	margin: 20px;
+	border: 1px solid #eee;
+	overflow:hidden;
+}
+.title{
+	height: 27px;
+	background: #F7F7F7;
+	position: relative;
+}
+.title ul{
+	position: absolute;
+	width: 301px;
+	left: -1px;
+}
+.title ul li{
+	width: 58px;
+	height: 26px;
+	float: left;
+	line-height: 26px;
+	text-align: center;
+	padding: 0 1px;
+	border-bottom: 1px solid #eee;
+	overflow: hidden;
+}
+.title ul li.selected{
+	background: #fff;
+	border-bottom-color:#FFF;
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+	padding: 0;
+}
+.tab li a:link,.tab li a:visited{
+	text-decoration:none;
+	color:#000;
+}
+.tab li a:hover{
+	color:#F90;
+}
+.content .content-item{
+	margin: 10px 10px;
+}
+.content .content-item ul li{
+	width: 138px;
+	height: 25px;
+	float: left;
+	overflow: hidden;
+}
+</style>
+</head>
+<body>
+	<div class="tab" id="tab">
+		<div class="title" id="title">
+			<ul>
+				<li class="selected">
+					<a href="#">公告</a>
+				</li>
+				<li>
+					<a href="#">规则</a>
+				</li>
+				<li>
+					<a href="#">论坛</a>
+				</li>
+				<li>
+					<a href="#">文章</a>
+				</li>
+				<li>
+					<a href="#">新闻</a>
+				</li>
+			</ul>
+		</div>
+		<div class="content" id="content">
+			<div class="content-item" style="display:block">
+				<ul>
+					<li>
+						<a href="#">
+                          张勇：要玩快乐足球
+						</a>
+					</li>
+                    <li>
+						<a href="#">
+                          阿里2000万驰援灾区！
+						</a>
+					</li>
+					<li>
+						<a href="#">
+                          旅游宝让你边玩边赚钱
+						</a>
+					</li>
+					<li>
+						<a href="#">
+                          多行跟进阿里信用贷款
+						</a>
+					</li>
+				</ul>
+			</div>
+            <div class="content-item" style="display:none">
+				<ul>
+					<li>
+						<span>
+							[
+                              <a href="#">通知</a>
+							]
+						</span>
+						<a href="#">
+                          "滥发"即将换新
+						</a>
+					</li>
+                    <li>
+						<span>
+							[
+                              <a href="#">通知</a>
+							]
+						</span>
+						<a href="#">
+                          比特币严管啦！
+						</a>
+					</li>
+					<li>
+						<span>
+							[
+                              <a href="#">通知</a>
+							]
+						</span>
+						<a href="#">
+                          禁发商品名录！
+						</a>
+					</li>
+	                <li>
+						<span>
+							[
+                              <a href="#">通知</a>
+							]
+						</span>
+						<a href="#">
+                          商品属性限制
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="content-item" style="display:none">
+				<ul>
+					<li>
+						<span>
+							[
+                              <a href="#">聚焦</a>
+							]
+						</span>
+						<a href="#">
+                          金牌卖家再启航
+						</a>
+					</li>
+                    <li>
+						<span>
+							[
+                              <a href="#">功能</a>
+							]
+						</span>
+						<a href="#">
+                          橱窗规则升级啦
+						</a>
+					</li>
+					<li>
+						<span>
+							[
+                              <a href="#">话题</a>
+							]
+						</span>
+						<a href="#">
+                          又爱又恨优惠劵 
+						</a>
+					</li>
+	                <li>
+						<span>
+							[
+                              <a href="#">工具</a>
+							]
+						</span>
+						<a href="#">
+                          购后送店铺红
+						</a>
+					</li>
+				</ul>
+			</div>
+            <div class="content-item" style="display:none">
+				<ul>
+					<li>
+						<a href="#">
+                          个人重要信息要管牢！
+						</a>
+					</li>
+                    <li>
+						<a href="#">
+                           卖家防范红包欺诈提醒
+						</a>
+					</li>
+					<li>
+						<a href="#">
+                            更换收货地址的陷阱！
+						</a>
+					</li>
+	                <li>
+                        <a href="#">
+                           注意骗子的技术升级了！
+						</a>
+					</li>
+				</ul>
+			</div>
+            <div class="content-item" style="display:none">
+				<ul>
+					<li>
+						<a href="#">
+                          走进无声课堂
+						</a>
+					</li>
+                    <li>
+						<a href="#">
+                           淘宝之行大众评审赢公益金
+						</a>
+					</li>
+					<li>
+						<a href="#">
+                            爱心品牌联合征集
+						</a>
+					</li>
+	                <li>
+                        <a href="#">
+                           名公益机构淘宝开店攻略
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	function $ (id) {
+		return typeof id === 'string'?document.getElementById(id):id;
+	}
+	window.onload = function(){
+		//获取当前高亮的li的索引、
+		var index = 0;
+		var timer = null;
+
+		var oLis = $('title').getElementsByTagName('li');
+		var oItems = $('content').getElementsByTagName('div');
+
+		if(oLis.length != oItems.length) return;
+
+		for (var i = 0; i < oLis.length; i++) {
+			oLis[i].id = i;
+			oLis[i].onmouseover = function(){
+				var that = this;
+				if(timer){
+					clearTimeout(timer);
+					timer = null;
+				}
+				//延迟半秒执行
+				timer = window.setTimeout(function(){
+					for (var j = 0; j < oLis.length; j++) {
+						oLis[j].className = '';
+						oItems[j].style.display = 'none';
+					}
+					oLis[that.id].className='selected';
+        			oItems[that.id].style.display='block';
+				},0)
+			}
+		};
+	}
+</script>
+</html>
