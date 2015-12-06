@@ -1,0 +1,25 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.window_alertBox{
+	width: 200px;
+	height: 100px;
+	position: fixed;
+	top: 200px;
+	left: 50%;
+	border: 1px solid red;
+}
+.window_header{
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	padding: 5px;
+	font-size: 14px;
+}
+.window_footer{
+	position: absolute;
+	bottom: 0;
+	left: 100px;
+	padding: 10px;
+}
