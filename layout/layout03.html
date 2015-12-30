@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>双飞翼布局</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		.header{
+			height: 150px;
+			background-color: red;
+		}
+		.main{
+			height: 300px;
+			background-color: yellow;
+			overflow: hidden;
+		}
+		.footer{
+			height: 100px;
+			background-color: green;
+		}
+		.main .left{
+			float: left;
+			width: 200px;
+			height: 30px;
+			background-color: #eee;
+			margin-left: -100%;
+			padding-bottom: 9999px;
+			margin-bottom: -9999px;
+		}
+		.main .right{
+			float:left;
+			width: 150px;
+			height: 30px;
+			color: white;
+			background-color: blue;
+			margin-left: -150px;
+			padding-bottom: 9999px;
+			margin-bottom: -9999px;
+		}
+		.main .middle{
+			background-color: #333;
+			width: 100%;
+			float: left;
+			padding-bottom: 9999px;
+			margin-bottom: -9999px;
+		}
+		.middle .inner{
+			margin-left: 200px;
+			margin-right: 150px;
+		}
+	</style>
+</head>
+<body>
+	<div class="header">我是头部</div>
+	<div class="main">
+		<div class="middle">
+			<div class="inner">
+				我是中间
+				<p>我是中间</p>
+				<p>我是中间</p>
+				<p>我是中间</p>
+				<p>我是中间</p>
+				<p>我是中间</p>
+				<p>我是中间</p>
+			</div>
+		</div>
+		<div class="left">我是左边</div>
+		<div class="right">我是右边</div>
+	</div>
+	<div class="footer">我是尾部</div>
+</body>
+</html>
