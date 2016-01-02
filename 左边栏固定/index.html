@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>左侧边栏固定效果</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+	<div class="header">我是的头部</div>
+	<div class="main">
+		<div id="left-side" class="left-side">我是左边栏</div>
+		<div id="content" class="content">我是内容</div>
+	</div>
+	<div class="footer">我是底部</div>
+<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+	/*$(function(){
+		var oWindow = $(window);
+		oWindow.scroll(function(){
+			var scrollHeight = oWindow.scrollTop();
+			var contentHeight = $('body').height() - $('.header').height();
+			//只随内容区域的滚动而变化
+			if(scrollHeight>300 && scrollHeight< (contentHeight-300)){
+				$('.left-side').css({
+					position:'absolute',
+					left:"0px",
+					top:scrollHeight - 300 +'px'
+				});
+			}else{
+				$('.left-side').css({
+					position:'absolute',
+					left:"0px",
+					top:"0px"
+				});
+			} 
+		});
+	});*/
+	//js实现侧边栏固定的效果
+	var  getId = function(id){
+		return document.getElementById(id);
+	}
+
+	var addEvent = function(obj,event,func){
+		if(obj.addEventListener){
+			obj.addEventListener(event,func,false);
+		}else if(obj.attachEvent()){
+			obj.attachEvent('on'+event,func);
+		}
+	}
+
+	var oLeftSide = getId('left-side');
+	addEvent(window,'scroll',function(){
+		var scrollHeight = document.body.scrollTop;
+		var contentHeight = getId('content').offsetHeight;
+		console.log(contentHeight);
+		console.log(scrollHeight);
+		if(scrollHeight > 300 &&　scrollHeight < contentHeight){
+			oLeftSide.style.position = 'absolute';
+			oLeftSide.style.top = scrollHeight-300 + 'px';
+			oLeftSide.style.left = '0px'; 
+		}else{
+			oLeftSide.style.position = 'absolute';
+			oLeftSide.style.top = '0px';
+			oLeftSide.style.left = '0px'; 
+		}
+	});
+</script>
+</body>
+</html>
