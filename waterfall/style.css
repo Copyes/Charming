@@ -1,0 +1,21 @@
+*{
+	margin:0px;
+	padding: 0px;
+}
+.container{
+	width: 900px;
+	margin: 0 auto;
+}
+.box{
+	position: relative;
+	float: left;
+}
+.content{
+	padding:10px;
+	border: 1px solid #ccc;
+	box-shadow: 0 0 5px #ccc;
+	border-radius: 5px;
+}
+.content img{
+	width: 200px;
+}
