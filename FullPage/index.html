@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Charming</title>
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header class="header">
+		<div class="nav">
+			<a href="" class="logo"><img src="images/logo.png" alt=""></a>
+			<ul id="menu">
+				<li class="active" data-menuanchor="page1"><a href="#page1">首页</a></li>
+				<li data-menuanchor="page2"><a href="#page2">吉祥物语</a></li>
+				<li data-menuanchor="page3"><a href="#page3">万事如意</a></li>
+				<li data-menuanchor="page4"><a href="#page4">北邦</a></li>
+				<li data-menuanchor="page5"><a href="#page5">雪国</a></li>
+			</ul>
+		</div>
+	</header>
+	<div class="main">
+		<div class="section s1">第一屏</div>
+		<div class="section s2">第二屏</div>
+		<div class="section s3">第三屏</div>
+		<div class="section s4">第四屏</div>
+		<div class="section s5">第五屏</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
+
+<script>
+	$(function(){
+		$('.main').fullpage({
+			sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90','#4BBFC3'],
+			'navigation': true,
+			anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
+			menu:"#menu",
+		});
+	});
+</script>
+</html>
