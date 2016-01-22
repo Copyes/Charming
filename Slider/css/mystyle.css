@@ -1,0 +1,132 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+body{
+	padding-top: 50px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	color: #555;
+}
+.slider .main,
+.slider .main .main-i,
+.slider{
+	width: 100%;
+	height: 400px;
+	position: relative;
+}
+/**/
+.slider .main{
+	overflow: hidden;
+}
+/*每个幻灯片的样式*/
+.slider .main .main-i{
+	
+}
+.slider .main .main-i img{
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 9;
+}
+.slider .main .main-i .caption{
+	position: absolute;
+	right: 50%;
+	top: 30%;
+	z-index: 10;
+}
+.slider .main .main-i .caption h2{
+	font: 40px/50px arial;
+	color: #B5B5B5;
+	text-align: right;
+	
+}
+.slider .main .main-i .caption h3{
+	font: 70px/70px "微软雅黑";
+	color: #000000;
+	text-align: right;
+}
+/*控制按钮*/
+.slider .ctrl{
+	width: 100%;
+	height: 13px;
+	line-height: 13px;
+	text-align: center;
+	position: absolute;
+	left: 0;
+	bottom: -13px;
+	background-color: chartreuse;
+}
+.slider .ctrl .ctrl-i{
+	position: relative;
+	display: inline-block;
+	width: 150px;
+	height: 13px;
+	background-color: #666;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+	margin-left: 1px;
+}
+.slider .ctrl .ctrl-i img{
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 50px;;
+	z-index: 11;
+	opacity: 0;
+	transition: all 0.3s;
+}
+.slider .ctrl .ctrl-i:hover{
+	background-color: #F0F0F0;
+}
+.slider .ctrl .ctrl-i:hover img{
+	bottom: 13px;
+	-webkit-box-reflect: below 0px -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		from( transparent),
+		color-stop(50%,transparent),
+		to(rgba(255,255,255,0.5))
+	);
+	opacity: 1;
+}
+.slider .ctrl .active:hover,
+.slider .ctrl .active{
+	background-color: #000000;
+}
+.slider .ctrl .active:hover img{
+	opacity: 0;
+}
+/*幻灯片切换*/
+.slider .main .main-i{
+	opacity: 0;
+	position: absolute;
+	right: 50%;
+	top: 0;
+	-webkit-transition: all 0.5s;
+}
+.slider .main .main-i h2{
+	margin-right: 45px;
+}
+.slider .main .main-i h3{
+	margin-right: -45px;
+}
+.slider .main .main-i h2,
+.slider .main .main-i h3{
+	-webkit-transition: all 0.8s 1s;
+}
+.slider .main .main-active{
+	right: 0;
+	opacity: 1;	
+}
+.slider .main .main-i h2,
+.slider .main .main-i h3{
+	margin-right: 0px;
+}
+
+
+
+
+
+
