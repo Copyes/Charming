@@ -27,7 +27,7 @@ body{
 	width: 100%;
 	position: absolute;
 	left: 0;
-	top: 0;
+	top: 50%;
 	z-index: 9;
 }
 .slider .main .main-i .caption{
@@ -71,7 +71,7 @@ body{
 	width: 100%;
 	position: absolute;
 	left: 0;
-	bottom: 50px;;
+	bottom: 50px;
 	z-index: 11;
 	opacity: 0;
 	transition: all 0.3s;
@@ -107,21 +107,27 @@ body{
 	-webkit-transition: all 0.5s;
 }
 .slider .main .main-i h2{
-	margin-right: 45px;
+	margin-right: 100px;
 }
 .slider .main .main-i h3{
-	margin-right: -45px;
+	margin-right: -100px;
 }
 .slider .main .main-i h2,
 .slider .main .main-i h3{
+	opacity: 0;
 	-webkit-transition: all 0.8s 1s;
 }
+#main_background,
 .slider .main .main-active{
 	right: 0;
 	opacity: 1;	
 }
-.slider .main .main-i h2,
-.slider .main .main-i h3{
+#main_background{
+	z-index: -1;
+}
+.slider .main .main-active h2,
+.slider .main .main-active h3{
+	opacity: 1;
 	margin-right: 0px;
 }
 

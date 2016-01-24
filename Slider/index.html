@@ -7,26 +7,19 @@
 	</head>
 	<body>
 		<div class="slider">
-			<div class="main">
-				<div class="main-i main-active">
+			<div class="main" id="template-main">
+				<div class="main-i" id="main_{{index}}">
 					<div class="caption">
-						<h2>xiaobiaoti</h2>
-						<h3>dabiaoti</h3>
+						<h2>{{h2}}</h2>
+						<h3>{{h3}}</h3>
 					</div>
-					<img src="img/1.jpg" alt="" />
-				</div>
-				<div class="main-i">
-					<div class="caption">
-						<h2>xiaobiaoti</h2>
-						<h3>dabiaoti</h3>
-					</div>
-					<img src="img/1.jpg" alt="" />
+					<img src="img/{{index}}.jpg" alt="" class="picture"/>
 				</div>
 			</div>
-			<div class="ctrl">
-				<a class="ctrl-i active" href="javascript:;"><img src="img/1.jpg" alt="" /></a>
-				<a class="ctrl-i" href="javascript:;"><img src="img/1.jpg" alt="" /></a>
+			<div class="ctrl" id="template-ctrl">
+				<a class="ctrl-i" id="ctrl_{{index}}" href="javascript:switchSlider({{index}});"><img src="img/{{index}}.jpg" alt="" /></a>
 			</div>
 		</div>
 	</body>
+	<script type="text/javascript" src="js/index.js"></script>
 </html>
