@@ -1,0 +1,19 @@
+{
+  "name": "siderbar",
+  "homepage": "https://github.com/Copyes/Charming",
+  "authors": [
+    "Copyes"
+  ],
+  "description": "",
+  "main": "main.js",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,231 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+}
+#sidebar{
+	padding-top: 35px;
+	width: 35px;
+	position: absolute;
+	left: 0;
+	background-color: #e1e1e1;
+	min-height: 100%;
+	z-index: 10;
+}
+.wrap{
+	padding-top: 80px;
+}
+#sidebar .item{
+	margin-bottom: 10px;
+	text-align: center;
+	cursor: pointer;
+}
+#close{
+	position: absolute;
+	bottom: 30px;
+	width: 100%;
+	text-align: center;
+	cursor: pointer;
+}
+/*sidebar 内容区域*/
+.nav-content{
+	position: absolute;
+	width: 200px;
+	min-height: 100%;
+	background-color: #e1e1e1;
+	text-align: center;
+	opacity: 0;
+	z-index: 1;
+}
+.nav-con-close{
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	cursor: pointer;
+}
+.item-nav-content{
+	padding-left: 30px;
+	padding-top: 30px;
+	background-color: red;
+}
+/*动画*/
+.sidebar-move-left{
+	-webkit-animation: smf;
+	-moz-animation:smf;
+	animation: smf;
+	-webkit-animation-duration: 1s;
+	-moz-animation-duration:1s;
+	animation-duration: 1s;
+	-webkit-animation-iteration-count: 1;
+	-moz-animation-iteration-count:1;
+	animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode: forwards;
+
+}
+@-webkit-keyframes smf {
+	from {
+
+	}
+	to{
+		transform:translateX(-40px);
+	}
+}
+.close-move-right{
+	-webkit-animation: cmr;
+	-moz-animation:cmr;
+	animation: cmr;
+	-webkit-animation-duration: 1s;
+	-moz-animation-duration:1s;
+	animation-duration: 1s;
+	-webkit-animation-iteration-count: 1;
+	-moz-animation-iteration-count:1;
+	animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes cmr {
+	from {
+
+	}
+	to{
+		transform:translateX(80px) rotate(405deg) scale(1.5);
+	}
+}
+
+.sidebar-move-right{
+	-webkit-animation: smr;
+	-moz-animation:smr;
+	animation: smr;
+	-webkit-animation-duration: 1s;
+	-moz-animation-duration:1s;
+	animation-duration: 1s;
+	-webkit-animation-iteration-count: 1;
+	-moz-animation-iteration-count:1;
+	animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode: forwards;
+
+}
+@-webkit-keyframes smr {
+	from {
+
+	}
+	to{
+		transform:translateX(40px);
+	}
+}
+
+.close-move-left{
+	-webkit-animation: cmf;
+	-moz-animation:cmf;
+	animation: cmf;
+	-webkit-animation-duration: 1s;
+	-moz-animation-duration:1s;
+	animation-duration: 1s;
+	-webkit-animation-iteration-count: 1;
+	-moz-animation-iteration-count:1;
+	animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes cmf {
+	from {
+		transform:scale(1.5);
+	}
+	to{
+		transform:translateX(-80px) rotate(-405deg) scale(1.0);
+	}
+}
+
+.menuContentElem-move-right{
+	-webkit-animation: mmr;
+	-moz-animation:mmr;
+	animation: mmr;
+	-webkit-animation-duration: 1s;
+	-moz-animation-duration:1s;
+	animation-duration: 1s;
+	-webkit-animation-iteration-count: 1;
+	-moz-animation-iteration-count:1;
+	animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode: forwards;
+
+}
+@-webkit-keyframes mmr {
+	from {
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+		transform:translateX(90px);
+	}
+}
+.menuContentElem-move-left{
+	-webkit-animation: mml;
+	-moz-animation:mml;
+	animation: mml;
+	-webkit-animation-duration: 1s;
+	-moz-animation-duration:1s;
+	animation-duration: 1s;
+	-webkit-animation-iteration-count: 1;
+	-moz-animation-iteration-count:1;
+	animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode: forwards;
+
+}
+@-webkit-keyframes mml {
+	from {
+		opacity: 1;
+	}
+	to{
+		opacity: 0;
+		transform:translateX(-90px);
+	}
+}
+
+.menuContentElem-move-up{
+	-webkit-animation: mmu;
+	-moz-animation:mmu;
+	animation: mmu;
+	-webkit-animation-duration: 1s;
+	-moz-animation-duration:1s;
+	animation-duration: 1s;
+	-webkit-animation-iteration-count: 1;
+	-moz-animation-iteration-count:1;
+	animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode: forwards;
+
+}
+@-webkit-keyframes mmu {
+	from {
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+		transform:translateY(-250px);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
