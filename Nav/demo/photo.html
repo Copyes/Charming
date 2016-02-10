@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>中英互换的导航</title>
+<link rel="stylesheet" type="text/css" href="demo.css">
+</head>
+<body>
+	<div class="nav">
+		<ul class="list">
+			<li><a href="Nav.html">首页</a></li>
+			<li><a href="introduce.html">自我介绍</a></li>
+			<li><a href="list.html">文章列表</a></li>
+			<li><a href="photo.html">照片墙</a></li>
+			<li><a href="connect.html">联系我吧</a></li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var index = window.location.href.split('/').length-1;
+	var strHref = window.location.href.split('/')[index].substr(0,4);
+	console.log(strHref);
+
+	if(strHref.length>0){
+		$('.list li a[href ^="'+strHref+'"]').addClass('on');
+	}else{
+		$('.list li a[href ^="index"]').addClass('on');
+	}
+})
+</script>
+</html>
