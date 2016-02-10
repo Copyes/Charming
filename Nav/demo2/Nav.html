@@ -1,18 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>中英互换的导航</title>
+<meta charset="UTF-8">
+<title>中英互换的导航</title>
+<link rel="stylesheet" type="text/css" href="demo2.css">
 </head>
 <body>
 	<div class="nav">
 		<ul class="list">
-			<li><a href="">首页</a></li>
-			<li><a href="">自我介绍</a></li>
-			<li><a href="">文章列表</a></li>
-			<li><a href="">照片墙</a></li>
-			<li><a href="">联系我吧</a></li>
+			<li>
+				<a href="">
+					<b>Index</b>
+					<i>首页</i>	
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<b>introduce</b>
+					<i>自我介绍</i>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<b>list</b>
+					<i>文章列表</i>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<b>photo</b>
+					<i>照片墙</i>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<b>connect</b>
+					<i>联系我</i>
+				</a>
+			</li>
 		</ul>
 	</div>
 </body>
+<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(".list a").hover(function(){
+		$(this).stop().animate({
+			"margin-top" : -40
+		},300)
+	},function(){
+		$(this).stop().animate({
+			"margin-top" :0
+		},300)
+	})
+})
+</script>
 </html>
