@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>横线导航</title>
+<link rel="stylesheet" type="text/css" href="nav.css">
+</head>
+<body>
+	<div class="nav">
+		<div class="nav-con">
+			<ul class="list">
+				<li><a href="Nav.html">首页</a></li>
+				<li><a href="introduce.html">自我介绍</a></li>
+				<li><a href="list.html">文章列表</a></li>
+				<li><a href="photo.html">照片墙</a></li>
+				<li><a href="connect.html">联系我吧</a></li>
+			</ul>
+			<div class="line"></div>
+		</div>	
+	</div>	
+</body>
+<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="jquery.easing.1.3.js"></script>
+<script type="text/javascript">
+$(function(){
+	var index = window.location.href.split('/').length-1;
+	var href = window.location.href.split('/')[index].substr(0,4);
+
+	$('.nav-con li a[href^="'+href+'"]').addClass('on');
+
+	var li_width = $('.nav-con li a.on').outerWidth();
+	var li_left = $('.nav-con li a.on').position().left;
+
+	$('.nav-con .line').css({
+		width:li_width,
+		left:li_left
+	});
+
+	$('.nav-con li').hover(function(){
+		var li_width = $(this).outerWidth();
+		var li_left = $(this).position().left;
+		$('.nav-con .line').stop().animate({width:li_width,left:li_left},{duration:1500,easing:"easeOutElastic"});
+	},function(){
+		$('.nav-con .line').stop().animate({width:li_width,left:li_left},{duration:1500,easing:"easeOutElastic"});
+	});
+
+
+
+
+
+
+})
+</script>
+</html>

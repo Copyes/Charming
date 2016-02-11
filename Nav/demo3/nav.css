@@ -1,0 +1,48 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+li{
+	list-style: none;
+}
+.nav{
+	width: 100%;
+	background-color: #f6f6f6;
+	height: 40px;
+}
+.nav-con{
+	width: 80%;
+	height: 40px;
+	margin: 0 auto;
+	position: relative;
+	border: 1px solid red;
+}
+.nav-con li {
+	float: left;
+}
+.nav-con a{
+	display: inline-block;
+	padding: 0 30px;
+	line-height: 40px;
+	color: #333;
+}
+.nav-con li a:hover,.nav-con li a.on{
+	color: #35b558;
+}
+.nav-con .line{
+	width: 100px;
+	height: 3px;
+	background-color: #35b558;
+	position: absolute;
+	top: 40px;
+	left: 0px;
+}
+
+
+
+
+
+
