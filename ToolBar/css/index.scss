@@ -1,0 +1,70 @@
+$toolWidth: 52px;
+@mixin toolbar-item($pos,$hoverPos){
+    background-position: 0 $pos;
+    
+    &:hover{
+        background-position: 0 $hoverPos;
+    }
+}
+@mixin transition($transition){
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -ms-transition: $transition;
+    transition: $transition;
+}
+.toolbar{
+	position:fixed;
+	left:50%;
+	bottom:5px;
+	margin-left:-$toolWidth / 2;
+}
+.toolbar-item{
+    position: relative;
+	display: block;
+	width: $toolWidth;
+	height:$toolWidth;
+	background-image: url(../img/toolbar.png);
+    background-repeat: no-repeat;
+    margin-top: 1px;
+    @include transition(background-position 1s); 
+    &:hover{
+        .toolbar-layer{
+            opacity: 1;
+            filter: alpha(opacity=100);
+            transform: scale(1.0);
+        }
+    }
+}
+.toolbar-item-weixin{
+    @include toolbar-item(-798px,-860px);
+	.toolbar-layer{
+	    height: 212px;
+	    background-position: 0 0;
+	}
+}
+.toolbar-item-back{
+    @include toolbar-item(-426px,-488px);
+}
+.toolbar-item-app{
+    @include toolbar-item(-550px,-612px);
+    .toolbar-layer{
+        height: 194px;
+        background-position: 0 -222px;
+    }
+}
+.toolbar-item-top{
+    @include toolbar-item(-674px,-736px);
+}
+.toolbar-layer{
+    position: absolute;
+    right: $toolWidth - 6;
+    bottom: -10px;
+    width: 172px;
+    background: url(../img/toolbar_img.png) no-repeat;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform-origin: 95% 95%;
+    transform: scale(0.01);
+    @include transition(all 1s); 
+}
