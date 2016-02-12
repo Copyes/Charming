@@ -3,15 +3,24 @@ define(['jquery'],function($){
 		this.opts = $.extend({},ScrollTo.DEFAULT,opts);
 		this.$elem = $('html,body');
 	}
+	
 	ScrollTo.prototype.move = function(){
 		var opts = this.opts;
-		this.$elem.animate({
-			scrollTop:opts.dest	
-		},opts.speed);
+		var dest = this.opts.dest;
+		if($(window).scrollTop() != dest){
+			if(!this.$elem.is(':animated')){
+				this.$elem.animate({
+					scrollTop:dest	
+				},opts.speed);
+			}
+		}
 	}
 	
 	ScrollTo.prototype.go = function(){
-		this.$elem.scrollTop(this.opts.dest);
+		var dest = this.opts.dest;
+		if($(window).scrollTop() != dest){
+			this.$elem.scrollTop(dest);
+		}
 	}
 	
 	ScrollTo.DEFAULT = {
