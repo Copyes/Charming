@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>手风琴</title>
+<style type="text/css">
+body,ul,p,li{margin: 0;padding: 0;}
+ul,ol{list-style: none;}
+.container{
+	width: 938px;
+	height: 128px;
+	border: 1px solid #d3d3d3;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	margin: 50px auto;
+	background: #fff;
+	overflow: hidden;
+}
+.container ul{width: 1000px;}
+.container li{
+	float: left;
+	width: 156px;
+	height: 128px;
+	overflow: hidden;
+	-webkit-transition: all .1s linear;
+	-moz-transition: all .1s linear;
+	-o-transition: all .1s linear;
+	-ms-transition: all .1s linear;
+	transition: all .1s linear;
+}
+.container li *{
+	-webkit-transition: all .1s linear;
+	-moz-transition: all .1s linear;
+	-o-transition: all .1s linear;
+	-ms-transition: all .1s linear;
+	transition: all .1s linear;
+}
+.container li a {
+	width: 156px;
+	height: 128px;
+	display: block;
+	position: relative;
+	text-decoration: none;
+	overflow: hidden;
+	cursor: pointer;
+}
+.container li a:hover{position: absolute;}
+.container li a:hover .mask{
+	-ms-filter: "alpha(opacity=0)";
+	filter:alpha(opacity=0);
+	opacity: 0;
+	-webkit-transition: opacity .2s ease-in;
+	-moz-transition: opacity .2s ease-in;
+	-o-transition: opacity .2s ease-in;
+	-ms-transition: opacity .2s ease-in;
+	transition: opacity .2s ease-in;
+}
+.container li img{
+	width: 117px;
+	height: 72px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.container li .line{
+	height: 128px;
+	width: 0px;
+	border-right: 1px dashed #cacaca;
+	position: absolute;
+	right: 0;
+	top:4px;
+}
+.container li .info{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 136px;
+	padding: 4px 10px;
+}
+.container li .info h3{
+	font-size: 14px;
+	font-weight: 700;
+}
+.container li .info p{
+	color: #868686;
+	font-size: 12px;
+	width: 100%;
+	height: 22px;
+	line-height: 22px;
+	overflow: hidden;
+}
+.container li .info p.price{
+	font-size: 14px;
+	font-family: italic;
+	color: #fa2a5d;
+	height: 35px;
+}
+.container li .info p.price strong{
+	font-size: 22px;
+	font-family: Arial;
+	padding-right: 2px;
+}
+.container li .info p.price i{
+	font-size: 14px;
+}
+.container li .info p.more{
+	opacity: 0;
+	position: absolute;
+	top: 20px;
+	left: 100px;
+}
+.container .mask{
+	height: 128px;
+	width: 156px;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #000;
+	-ms-filter: "alpha(opacity=0)";
+	filter:alpha(opacity=0);
+	opacity: 0;
+	-webkit-transition: opacity .2s ease-in;
+	-moz-transition: opacity .2s ease-in;
+	-o-transition: opacity .2s ease-in;
+	-ms-transition: opacity .2s ease-in;
+	transition: opacity .2s ease-in;
+}
+.container .big{
+	width: 314px;
+}
+.container .big a {
+	width: 314px;
+}
+.container .big img{
+	width: 195px;
+	height: 120px;
+	right: 0;
+	bottom: 0;
+}
+.container .big .info{
+	width: 294px;
+}
+.container .big .info h3{
+	font-size: 18px;
+}
+.container .big .info p{
+	font-size: 14px;
+	width: 166px;
+}
+.container .big .info p.price{
+	font-size: 16px;
+	padding-top: 7px;
+}
+.container .big .info p.price strong{
+	font-size: 28px;
+}
+.container .big .info p.price i{
+	font-size: 16px;
+}
+.container .big .info p.more{
+	opacity: 1;
+	display: block;
+	font-size: 12px;
+	color: #ff2a5b;
+	position: absolute;
+	top: 20px;
+	left: 100px;
+}
+.container .big .mask{
+	width: 314px;
+}
+.container:hover .mask{
+	-ms-filter:"alpha(Opacity=15)";
+	filter:alpha(opacity=15);
+	opacity:.15;
+	-webkit-transition:opacity .2s ease-in;
+	-moz-transition:opacity .2s ease-in;
+	-o-transition:opacity .2s ease-in;
+	-ms-transition:opacity .2s ease-in;
+	transition:opacity .2s ease-in
+}
+</style>
+</head>
+<body>
+	<div class="container" id="container">
+		<ul>
+			<li class="big">
+				<a href="#">
+					<img src="http://gtms01.alicdn.com/tps/i1/T1Lvt3Fv4kXXbA5QAK-195-120.jpg_Q90.jpg" />
+					<div class="info">
+						<h3>聚美妆</h3>
+						<p>聚美妆1/2周年庆</p>
+						<p class="price"><strong>1</strong><i>折起</i></p>
+						<p class="more">进入专题页</p>
+					</div>
+					<s class="line"></s>
+					<i class="mask"></i>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="http://gtms01.alicdn.com/tps/i1/T1qxGLFsVbXXbA5QAK-195-120.jpg_Q90.jpg" />
+					<div class="info">
+						<h3>Baby购</h3>
+						<p>宝宝该换装了，新品抢购</p>
+						<p class="price"><strong>1</strong><i>折起</i></p>
+						<p class="more">进入专题页</p>
+					</div>
+					<s class="line"></s>
+					<i class="mask"></i>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="http://gtms02.alicdn.com/tps/i2/T1KOSNFxXaXXbA5QAK-195-120.jpg_Q90.jpg" />
+					<div class="info">
+						<h3>时装团</h3>
+						<p>时尚春装，清新小潮搭配</p>
+						<p class="price"><strong>1</strong><i>折起</i></p>
+						<p class="more">进入专题页</p>
+					</div>
+					<s class="line"></s>
+					<i class="mask"></i>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="http://gtms04.alicdn.com/tps/i4/T1CCeIFrVbXXbA5QAK-195-120.jpg_Q90.jpg" />
+					<div class="info">
+						<h3>TV购</h3>
+						<p>补血养颜 就这么简单</p>
+						<p class="price"><strong>1</strong><i>折起</i></p>
+						<p class="more">进入专题页</p>
+					</div>
+					<s class="line"></s>
+					<i class="mask"></i>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="http://gtms01.alicdn.com/tps/i1/T1jmKJFyJbXXbA5QAK-195-120.jpg_Q90.jpg" />
+					<div class="info">
+						<h3>聚新鲜</h3>
+						<p>最纯正的泰国香米</p>
+						<p class="price"><strong>1</strong><i>折起</i></p>
+						<p class="more">进入专题页</p>
+					</div>
+					<i class="mask"></i>
+				</a>
+			</li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript" src="jquery-1.9.1.js"></script>
+<script type="text/javascript">
+	window.onload = function(){
+		function mouseOver(e){
+			var oLi = $('#container li'),
+			target = $(e.target).parents('li');
+			oLi.removeClass('big');
+			target.addClass('big');
+		}
+
+		(function(){
+			var container = $('#container');
+			container.find('li').on('mouseover',mouseOver);
+		})()
+	}
+</script>
+</html>
