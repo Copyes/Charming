@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>焦点轮播图</title>
+<style>
+*{margin: 0;padding: 0;}
+.container{
+	margin: 0 auto;
+	width: 600px;
+	height: 400px;
+	border: 2px solid #eee;
+	position: relative;
+	overflow: hidden;
+}
+.container ul{
+	width: 4200px;
+	height: 400px;
+	position: absolute;
+	z-index: 1;
+}
+.container ul li{
+	float: left;
+	list-style: none;
+}
+.container .button{
+	position: absolute;
+	left: 250px;
+	bottom:20px;
+	width: 100px;
+	height: 20px;
+	z-index: 2;
+}
+.container .button span{
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin-right: 5px;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	background-color: #333;
+	cursor: pointer;
+}
+.button span.on{
+	background-color: orangered;
+}
+.allow{
+	display: none;
+	position: absolute;
+	top: 180px;
+	width: 40px;
+	height: 40px;
+	color: #fff;
+	text-decoration: none;
+	line-height: 40px;
+	text-align: center;
+	font-size: 36px;
+	font-weight: bold;
+	background: rgba(0,0,0,.3);
+	z-index: 2;
+}
+#prev{
+	left: 20px;
+}
+#next{
+	right: 20px;
+}
+.allow:hover{
+	background: rgba(0,0,0,.7);
+}
+.container:hover .allow{
+	display: inline-block;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<ul id="list" style="left:-600px">
+			<li><a href=""><img src="./img/5.jpg"></a></li>
+			<li><a href=""><img src="./img/1.jpg"></a></li>
+			<li><a href=""><img src="./img/2.jpg"></a></li>
+			<li><a href=""><img src="./img/3.jpg"></a></li>
+			<li><a href=""><img src="./img/4.jpg"></a></li>
+			<li><a href=""><img src="./img/5.jpg"></a></li>
+			<li><a href=""><img src="./img/1.jpg"></a></li>
+		</ul>
+		<ul id="button" class="button">
+			<li><span index="1" class="on"></span></li>
+			<li><span index="2"></span></li>
+			<li><span index="3"></span></li>
+			<li><span index="4"></span></li>
+			<li><span index="5"></span></li>
+		</ul>
+		<a href="javascript:;" id="prev" class="allow">&lt;</a>
+		<a href="javascript:;" id="next" class="allow">&gt;</a>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery.1.10.2.js"></script>
+<script type="text/javascript">
+$(function (){
+	var container = $('.container'),
+		list = $('#list'),
+		buttons = $('#button span'),
+		prev = $('#prev'),
+		next = $('#next'),
+		len = 5,
+		index =1
+		interval = 3000,
+		timer = null;
+	//运动函数
+	function move(offset){
+		var left = parseInt(list.css('left')) + offset;
+		// if(offset > 0){
+		// 	offset = '+' + offset;
+		// }else{
+		// 	offset = '-' + Math.abs(offset);
+		// }
+		console.log(left);
+		list.animate({'left':left},300,function(){
+			if(left > -200){
+				list.css('left' ,  -600 * len);
+			}
+			if(left < (-600 * len)){
+				list.css('left' , -600);
+			}
+		});
+	}
+	//按钮的改变
+	function changeButton(){
+		buttons.each(function(index, el) {
+			buttons.eq(index).removeClass('on');
+		});
+		buttons.eq(index-1).addClass('on');
+	}
+	//自动执行
+	function play(){
+		timer = setTimeout(function(){
+			next.trigger('click');
+			play();
+		},interval)
+	}
+	//停止，当hover进去的时候就停止轮播
+	function stop(){
+		clearTimeout(timer);
+	}
+	//下一张的切换事件
+	next.on('click',function(){
+		//判断是否还在运动中
+		if (list.is(':animated')) {
+			return ;
+		}
+		if (index == 5) {
+			index = 1;
+		}else{
+			index += 1;
+		}
+		move(-600);
+		changeButton();
+	});
+	//上一张切换事件
+	prev.on('click',function(){
+		//判断是否还在运动中
+		if(list.is(':animated')){
+			return;
+		}
+		//按钮的逻辑
+		if(index == 1){
+			index =5;
+		}else{
+			index -=1;
+		}
+		move(600);
+		changeButton();
+	});
+	//处理button点击,用的事件委托，棒棒哒
+	$('#button').on('click',function(e){
+		var e = e || window.event,
+			target = e.target || e.srcElement;
+		if (target.nodeName == 'SPAN') {
+			var myIndex = parseInt($(target).attr('index')),
+			offset = -600 * (myIndex - index);
+
+			move(offset);
+			index = myIndex;
+			changeButton();
+		}
+	});
+
+	container.hover(stop,play);
+	play();
+});
+</script>
+</html>
