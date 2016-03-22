@@ -1,0 +1,23 @@
+*{
+    margin:0;
+    padding: 0;
+}
+.content{
+    width: 100px;
+    height:100px;
+    margin:0 auto;
+    border:dashed 1px #ccc;
+    overflow: hidden;
+}
+.content li{
+    height:20px;
+    line-height: 20px;
+    -webkit-transition: margin-top 0.5s ease-in-out;
+    -moz-transition: margin-top 0.5s ease-in-out;
+    -ms-transition: margin-top 0.5s ease-in-out;
+    -o-transition: margin-top 0.5s ease-in-out;
+    transition: margin-top 0.5s ease-in-out;
+}
+.adding{
+
+}
